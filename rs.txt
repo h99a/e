@@ -1,0 +1,98 @@
+
+median class=ml=min(which(cl>=n/2))
+f=frequency[ml]
+c=cl[ml-1]
+l=mid[nl]-h/2
+median=l+(((n/2)-c)/f)*h
+m=which(frequency==max(frequency))
+
+
+median formula basically
+empinfo=data.frame(empid,age,gender,status)
+empinfo
+
+# labeling character to numeric
+empinfo$gender=factor(empinfo$gender,labels=c("male","female"))
+empinfo$gender
+
+gender is a column in dataframe empinfo
+
+male=subset(df,df$a="ea")
+
+select * from table where a='ea'
+
+summary(df)
+
+# Graphical representation (scatterplot)
+plot(empinfo$age,type="l",main="Age of employees",xlab="empid",ylab="age in
+years",col="blue")
+
+# Graphical representation (Bar plot)
+barplot(table3,beside=T,xlim=c(1,15),ylim=c(0,5),col=c("blue", "red"))
+legend("topright",legend=rownames(table3),fill=c('blue','red'),bty="n")
+
+
+regression and corelation
+
+v1=var(data$speed)
+v1
+
+covariance=cov(data$speed,data$dist)
+covariance
+
+corr=covariance/(sd(data$speed)*sd(data$dist))
+corr
+
+# Test for association between paired samples
+cor.test(data$speed,data$dist)
+
+cor.test(data$speed,data$dist,method="spearman")
+
+regression1=lm(data$speed~data$dist)
+regression1
+
+simple regression implementation 
+{
+	weight=c(15,26,27,25,25.5,27,32,18,22,20,26,24)
+	weight
+	## [1] 15.0 26.0 27.0 25.0 25.5 27.0 32.0 18.0 22.0 20.0 26.0 24.0
+	bmi=c		(13.35,16.12,16.74,16,13.59,15.73,15.65,13.85,16.07,12.8,13.65,14.42)
+	bmi
+	## [1] 13.35 16.12 16.74 16.00 13.59 15.73 15.65 13.85 16.07 12.80 13.65
+	14.42
+	cor(weight,bmi)
+	## [1] 0.5790235
+	mode1<-lm(bmi~weight)
+	summary.lm(mode1)
+}
+
+# Linear regression model of Y on X1 and X2
+RegModel=lm(Y~X1+X2)
+RegModel
+
+# install.packages("scatterplot3d")
+library(scatterplot3d)
+# Plot the data set
+scatterplot3d(Y,X1,X2)
+
+
+probability 
+{
+# (i) probability of getting exactly 2 heads
+dbinom(2,n,p)
+## [1] 0.00230496
+# (ii) probability of getting atleast 2 heads
+sum(dbinom(2:4,n,p))
+}
+
+
+#(iv) Expectation of x
+x=0:n
+px=dbinom(x,n,p)
+Ex=weighted.mean(x,px)
+Ex
+
+# (v) variance of x
+Varx=weighted.mean(x*x,px)-(weighted.mean(x ,px))^2
+Varx
+
